@@ -130,47 +130,47 @@ The following figures are included from the local experiment artifacts. They are
 
 ### Figure 1
 
-![Result figure 1](./docs/assets/result_01.png)
+![Result figure 1](docs/assets/result_01.png)
 
 ### Figure 2
 
-![Result figure 2](./docs/assets/result_02.png)
+![Result figure 2](docs/assets/result_02.png)
 
 ### Figure 3
 
-![Result figure 3](./docs/assets/result_03.png)
+![Result figure 3](docs/assets/result_03.png)
 
 ### Figure 4
 
-![Result figure 4](./docs/assets/result_04.png)
+![Result figure 4](docs/assets/result_04.png)
 
 ### Figure 5
 
-![Result figure 5](./docs/assets/result_05.png)
+![Result figure 5](docs/assets/result_05.png)
 
 ### Figure 6
 
-![Result figure 6](./docs/assets/result_06.png)
+![Result figure 6](docs/assets/result_06.png)
 
 ### Figure 7
 
-![Result figure 7](./docs/assets/result_07.png)
+![Result figure 7](docs/assets/result_07.png)
 
 ### Figure 8
 
-![Result figure 8](./docs/assets/result_08.png)
+![Result figure 8](docs/assets/result_08.png)
 
 ### Figure 9
 
-![Result figure 9](./docs/assets/result_09.png)
+![Result figure 9](docs/assets/result_09.png)
 
 ### Figure 10
 
-![Result figure 10](./docs/assets/result_10.png)
+![Result figure 10](docs/assets/result_10.png)
 
 ### Figure 11
 
-![Result figure 11](./docs/assets/result_11.png)
+![Result figure 11](docs/assets/result_11.png)
 
 ## 9. Analysis
 

@@ -31,6 +31,17 @@ ToolAgent-GRPO addresses this with:
 - **Long-context rollout engineering**: supports 24K context and 15 user/assistant turns under controlled GPU memory usage.
 - **Multi-sample evaluation**: reports pass@1, pass@4, average turns, average tool calls, and error rate by task split.
 
+
+## Result Figures
+
+The detailed report includes all experiment screenshots. A few representative figures are shown below.
+
+![ToolAgent result figure 1](docs/assets/result_01.png)
+
+![ToolAgent result figure 2](docs/assets/result_02.png)
+
+![ToolAgent result figure 3](docs/assets/result_03.png)
+
 ## Report
 
 A more detailed technical report with additional figures is available here:
