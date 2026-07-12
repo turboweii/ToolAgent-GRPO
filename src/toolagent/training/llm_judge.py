@@ -52,7 +52,7 @@ def is_enabled() -> bool:
 
 
 # tau-bench airline rubric. Weights sum to 1.0. Reuses the same read/write
-# semantics as b_ndsr (no coupling -- just aligned vocabulary).
+# semantics as b_ndsr (no coupling).
 RUBRIC = (
     {"id": "tool_correctness", "weight": 0.25, "desc": "Right tool, valid arguments, no invalid/unknown tool calls."},
     {"id": "info_gathering", "weight": 0.25, "desc": "Read enough (user/reservation/flights) before any irreversible write."},

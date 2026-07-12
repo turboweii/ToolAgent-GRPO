@@ -14,7 +14,7 @@ data:
   val_files: experiments/grpo_airline/val.parquet
   train_batch_size: 2
   max_prompt_length: 10240
-  max_response_length: 12288  # aligned with reference for 15-turn rollouts
+  max_response_length: 12288  # for 15-turn rollouts
   return_raw_chat: true
   tool_config_path: configs/tool_config/tau_bench_airline_tools.yaml
 
@@ -58,7 +58,7 @@ actor_rollout_ref:
       max_assistant_turns: 15
       tool_config_path: configs/tool_config/tau_bench_airline_tools.yaml
       interaction_config_path: configs/interaction_config/tau_bench_airline.yaml
-    n: 8  # group size: aligned with reference (G=8); G=4 has too many zero-variance groups
+    n: 8  # group size; G=4 has too many zero-variance groups
     temperature: 0.7
     top_p: 0.9
     tensor_model_parallel_size: 1
@@ -66,8 +66,8 @@ actor_rollout_ref:
     gpu_memory_utilization: 0.32
     free_cache_engine: true
     max_num_seqs: 8  # match n=8
-    max_model_len: 24576  # aligned with reference: prompt 10240 + response 12288
-    max_num_batched_tokens: 24576  # aligned with reference
+    max_model_len: 24576  # prompt 10240 + response 12288
+    max_num_batched_tokens: 24576
     log_prob_micro_batch_size_per_gpu: 1
     val_kwargs:
       n: 1

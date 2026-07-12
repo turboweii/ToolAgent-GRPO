@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-MODEL_PATH=${MODEL_PATH:-"../models/Qwen2.5-72B-Instruct-AWQ"}  # user sim 72B (aligned with reference)
+MODEL_PATH=${MODEL_PATH:-"../models/Qwen2.5-72B-Instruct-AWQ"}  # user simulator 72B
 SERVED_MODEL_NAME=${SERVED_MODEL_NAME:-"Qwen/Qwen2.5-72B-Instruct-AWQ"}
 PORT=${PORT:-8001}
 CUDA_DEVICES=${CUDA_DEVICES:-1}
