@@ -123,14 +123,14 @@ The curriculum + judge method improves average task success and reduces rollout 
 
 ### 7.2 Six Individual Runs
 
-| Group | Run | pass@1 | pass@4 | pass^4 | Avg. tool calls | Avg. turns | Error rate |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Curriculum | previous | 0.260 | 0.380 | 0.100 | 5.670 | 8.545 | 0.080 |
-| Curriculum | repeat | 0.260 | 0.420 | 0.100 | 6.000 | 8.560 | 0.010 |
-| Curriculum | unified | **0.320** | **0.440** | **0.140** | 5.670 | 8.010 | 0.010 |
-| Ordinary GRPO | original | 0.200 | 0.300 | 0.060 | 9.070 | 13.035 | 0.060 |
-| Ordinary GRPO | previous/current | 0.120 | 0.360 | 0.040 | 8.205 | 11.730 | 0.040 |
-| Ordinary GRPO | repeat | 0.200 | 0.300 | 0.080 | 8.745 | 12.350 | 0.020 |
+| Group | pass@1 | pass@4 | pass^4 | Avg. tool calls | Avg. turns | Error rate |
+|---|---:|---:|---:|---:|---:|---:|
+| Curriculum | 0.260 | 0.380 | 0.100 | 5.670 | 8.545 | 0.080 |
+| Curriculum | 0.260 | 0.420 | 0.100 | 6.000 | 8.560 | 0.010 |
+| Curriculum | **0.320** | **0.440** | **0.140** | 5.670 | 8.010 | 0.010 |
+| Ordinary GRPO | 0.200 | 0.300 | 0.060 | 9.070 | 13.035 | 0.060 |
+| Ordinary GRPO | 0.120 | 0.360 | 0.040 | 8.205 | 11.730 | 0.040 |
+| Ordinary GRPO | 0.200 | 0.300 | 0.080 | 8.745 | 12.350 | 0.020 |
 
 The six JSON files used for this comparison are stored under:
 

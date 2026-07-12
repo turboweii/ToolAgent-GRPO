@@ -41,13 +41,11 @@ ToolAgent-GRPO addresses this with:
 
 ## Result Figures
 
-The detailed report includes all experiment screenshots. A few representative figures are shown below.
+The detailed report includes all experiment screenshots. Two representative figures are shown below.
 
-<p><img src="./docs/assets/result_01.png" alt="ToolAgent result figure 1" width="900"></p>
+<p><img src="./docs/assets/result_04.png" alt="ToolAgent result figure 4" width="900"></p>
 
-<p><img src="./docs/assets/result_02.png" alt="ToolAgent result figure 2" width="900"></p>
-
-<p><img src="./docs/assets/result_03.png" alt="ToolAgent result figure 3" width="900"></p>
+<p><img src="./docs/assets/result_10.png" alt="ToolAgent result figure 10" width="900"></p>
 
 ## Report
 

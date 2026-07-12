@@ -1,0 +1,2478 @@
+{
+  "success_rate": 0.275,
+  "pass_at_1": 0.26,
+  "pass_at_4": 0.38,
+  "error_rate": 0.08,
+  "num_samples": 200,
+  "num_tasks": 50,
+  "avg_tool_calls": 5.67,
+  "by_split": {
+    "covered_seen": {
+      "num_tasks": 15,
+      "num_samples": 60,
+      "success_rate": 0.45,
+      "pass_at_1": 0.4666666666666667,
+      "pass_at_4": 0.6666666666666666,
+      "pass^4": 0.2,
+      "error_rate": 0.15,
+      "error_count": 9,
+      "total_tool_calls": 299,
+      "avg_tool_calls": 4.983333333333333,
+      "avg_tool_calls_per_sample": 4.983333333333333,
+      "avg_tool_calls_per_task": 19.933333333333334,
+      "total_turns": 526,
+      "avg_turns": 8.766666666666667,
+      "avg_turns_per_sample": 8.766666666666667,
+      "avg_turns_per_task": 35.06666666666667
+    },
+    "uncovered_seen": {
+      "num_tasks": 25,
+      "num_samples": 100,
+      "success_rate": 0.18,
+      "pass_at_1": 0.12,
+      "pass_at_4": 0.24,
+      "pass^4": 0.04,
+      "error_rate": 0.04,
+      "error_count": 4,
+      "total_tool_calls": 643,
+      "avg_tool_calls": 6.43,
+      "avg_tool_calls_per_sample": 6.43,
+      "avg_tool_calls_per_task": 25.72,
+      "total_turns": 888,
+      "avg_turns": 8.88,
+      "avg_turns_per_sample": 8.88,
+      "avg_turns_per_task": 35.52
+    },
+    "unseen": {
+      "num_tasks": 10,
+      "num_samples": 40,
+      "success_rate": 0.25,
+      "pass_at_1": 0.3,
+      "pass_at_4": 0.3,
+      "pass^4": 0.1,
+      "error_rate": 0.075,
+      "error_count": 3,
+      "total_tool_calls": 192,
+      "avg_tool_calls": 4.8,
+      "avg_tool_calls_per_sample": 4.8,
+      "avg_tool_calls_per_task": 19.2,
+      "total_turns": 295,
+      "avg_turns": 7.375,
+      "avg_turns_per_sample": 7.375,
+      "avg_turns_per_task": 29.5
+    },
+    "overall": {
+      "num_tasks": 50,
+      "num_samples": 200,
+      "success_rate": 0.275,
+      "pass_at_1": 0.26,
+      "pass_at_4": 0.38,
+      "pass^4": 0.1,
+      "error_rate": 0.08,
+      "error_count": 16,
+      "total_tool_calls": 1134,
+      "avg_tool_calls": 5.67,
+      "avg_tool_calls_per_sample": 5.67,
+      "avg_tool_calls_per_task": 22.68,
+      "total_turns": 1709,
+      "avg_turns": 8.545,
+      "avg_turns_per_sample": 8.545,
+      "avg_turns_per_task": 34.18
+    }
+  },
+  "per_task": [
+    {
+      "task_id": 0,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 6.75,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 1,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 4.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 2,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 3.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 3,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 13.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 4,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 13.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 5,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 3.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 6,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 7.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 7,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 3.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 8,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 7.25,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 9,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 9.75,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 10,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 8.25,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 11,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 14.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 12,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 0.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 3.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 13,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 2,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 5.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 14,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 6.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 15,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 8.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 16,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 3.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 17,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 4.0,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 18,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 4.5,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 19,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 7.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 20,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 4.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 21,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 2,
+      "pass_at_1": 0.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 3.25,
+      "error_count": 2,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 22,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 6.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 23,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 8.75,
+      "error_count": 2,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 24,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 8.75,
+      "error_count": 2,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 25,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 3.0,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 26,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 11.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 27,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 5.5,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 28,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 1.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 29,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 0.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 4.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 30,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 5.5,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 31,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 4.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 32,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 6.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 33,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 10.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 34,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 4,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 8.5,
+      "error_count": 0,
+      "pass^4": 1.0
+    },
+    {
+      "task_id": 35,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 2.5,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 36,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 6.25,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 37,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 4,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 2.75,
+      "error_count": 0,
+      "pass^4": 1.0
+    },
+    {
+      "task_id": 38,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 3.25,
+      "error_count": 1,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 39,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 2.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 40,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 4,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 2.5,
+      "error_count": 0,
+      "pass^4": 1.0
+    },
+    {
+      "task_id": 41,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 4,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 1.75,
+      "error_count": 0,
+      "pass^4": 1.0
+    },
+    {
+      "task_id": 42,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 2,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 2.25,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 43,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 1,
+      "pass_at_1": 0.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 3.0,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 44,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 1,
+      "pass_at_1": 0.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 2.0,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 45,
+      "split": "unseen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 3.0,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 46,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 11.0,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 47,
+      "split": "covered_seen",
+      "num_samples": 4,
+      "success_count": 4,
+      "pass_at_1": 1.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 1.0,
+      "error_count": 0,
+      "pass^4": 1.0
+    },
+    {
+      "task_id": 48,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 0,
+      "pass_at_1": 0.0,
+      "pass_at_4": 0.0,
+      "avg_tool_calls": 4.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    },
+    {
+      "task_id": 49,
+      "split": "uncovered_seen",
+      "num_samples": 4,
+      "success_count": 3,
+      "pass_at_1": 0.0,
+      "pass_at_4": 1.0,
+      "avg_tool_calls": 2.75,
+      "error_count": 0,
+      "pass^4": 0.0
+    }
+  ],
+  "config": {
+    "env": {
+      "env_name": "airline",
+      "task_split": "test",
+      "num_tasks": 50,
+      "num_samples_per_task": 4,
+      "max_turns": 24,
+      "sample_timeout_sec": 600,
+      "split_file": "experiments/sft_collect_airline/split.json",
+      "user_model": "openai/Qwen/Qwen2.5-72B-Instruct-AWQ",
+      "user_provider": "openai",
+      "user_base_url": "http://localhost:8001/v1"
+    },
+    "policy": {
+      "model_name": "experiments/grpo_bndsr_jass_judge_adaptive_curriculum/hf_step_150",
+      "served_model_name": "toolagent-assistant-7b-grpo",
+      "base_url": "http://localhost:8000/v1",
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "max_tokens": 12288,
+      "max_context_chars": 35000
+    },
+    "output": {
+      "dir": "outputs/eval_grpo_bndsr_jass_judge_adaptive_curriculum_step150_airline_2xa800_72b_user"
+    },
+    "wandb": {
+      "project": "ToolAgent-GRPO",
+      "run_name": "eval_grpo_bndsr_jass_judge_adaptive_curriculum_step150_airline_2xa800_72b_user",
+      "group": "grpo-eval",
+      "job_type": "eval"
+    }
+  },
+  "results": [
+    {
+      "task_id": 0,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 4,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 0,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 9,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 0,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 8,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 0,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 13,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 1,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 1,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 1,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 3,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 1,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 18,
+      "num_tool_calls": 11,
+      "error": null
+    },
+    {
+      "task_id": 2,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 2,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 2,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 2,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 3,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 3,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 24,
+      "error": null
+    },
+    {
+      "task_id": 3,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 22,
+      "error": null
+    },
+    {
+      "task_id": 3,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 4,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 17,
+      "error": null
+    },
+    {
+      "task_id": 4,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 18,
+      "num_tool_calls": 17,
+      "error": null
+    },
+    {
+      "task_id": 4,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 9,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 4,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 15,
+      "error": null
+    },
+    {
+      "task_id": 5,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 13,
+      "num_tool_calls": 8,
+      "error": null
+    },
+    {
+      "task_id": 5,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 5,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 5,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 6,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 18,
+      "error": null
+    },
+    {
+      "task_id": 6,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 12,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 6,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 6,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 7,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 11,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 7,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 7,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 7,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 8,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 12,
+      "num_tool_calls": 9,
+      "error": null
+    },
+    {
+      "task_id": 8,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 8,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 8,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 12,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 9,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 12,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 9,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 20,
+      "error": null
+    },
+    {
+      "task_id": 9,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 9,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 12,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 10,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 9,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 10,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 21,
+      "num_tool_calls": 19,
+      "error": null
+    },
+    {
+      "task_id": 10,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 3,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 10,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 11,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 3,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 11,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 19,
+      "error": null
+    },
+    {
+      "task_id": 11,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 4,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 11,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 33,
+      "error": null
+    },
+    {
+      "task_id": 12,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 5,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 12,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 4,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 12,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 12,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 8,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 13,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 16,
+      "num_tool_calls": 9,
+      "error": null
+    },
+    {
+      "task_id": 13,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 8,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 13,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 3,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 13,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 7,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 14,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 9,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 14,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 14,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 12,
+      "num_tool_calls": 8,
+      "error": null
+    },
+    {
+      "task_id": 14,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 5,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 15,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 15,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 14,
+      "num_tool_calls": 9,
+      "error": null
+    },
+    {
+      "task_id": 15,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 21,
+      "error": null
+    },
+    {
+      "task_id": 15,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 16,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 5,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 16,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 16,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 16,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 15,
+      "num_tool_calls": 9,
+      "error": null
+    },
+    {
+      "task_id": 17,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 17,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 17,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 10,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 17,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 18,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 8,
+      "error": "ValidationError: 1 validation error for EnvResponse\nobservation\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+    },
+    {
+      "task_id": 18,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 18,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 7,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 18,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 19,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 14,
+      "num_tool_calls": 10,
+      "error": null
+    },
+    {
+      "task_id": 19,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 9,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 19,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 14,
+      "num_tool_calls": 10,
+      "error": null
+    },
+    {
+      "task_id": 19,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 7,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 20,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 3,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 20,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 8,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 20,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 8,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 20,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 8,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 21,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 4,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 21,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 21,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 5,
+      "error": "ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 16384 tokens. However, you requested 16491 tokens (4203 in the messages, 12288 in the completion). Please reduce the length of the messages or completion. None"
+    },
+    {
+      "task_id": 21,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 22,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 22,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 22,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 23,
+      "num_tool_calls": 16,
+      "error": null
+    },
+    {
+      "task_id": 22,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 23,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 9,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 23,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 14,
+      "num_tool_calls": 12,
+      "error": null
+    },
+    {
+      "task_id": 23,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 6,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 23,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 10,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 24,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 5,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 24,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 15,
+      "num_tool_calls": 10,
+      "error": null
+    },
+    {
+      "task_id": 24,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 9,
+      "error": "ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 16384 tokens. However, you requested 16678 tokens (4390 in the messages, 12288 in the completion). Please reduce the length of the messages or completion. None"
+    },
+    {
+      "task_id": 24,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 16,
+      "num_tool_calls": 11,
+      "error": null
+    },
+    {
+      "task_id": 25,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 25,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 25,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 25,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 12,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 26,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 20,
+      "error": null
+    },
+    {
+      "task_id": 26,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 26,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 26,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 17,
+      "num_tool_calls": 14,
+      "error": null
+    },
+    {
+      "task_id": 27,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 27,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 15,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 27,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 27,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 3,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 28,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 28,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 28,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 5,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 28,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 29,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 13,
+      "num_tool_calls": 10,
+      "error": null
+    },
+    {
+      "task_id": 29,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 5,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 29,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 29,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 30,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 5,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 30,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 30,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 11,
+      "num_tool_calls": 9,
+      "error": null
+    },
+    {
+      "task_id": 30,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 12,
+      "num_tool_calls": 9,
+      "error": null
+    },
+    {
+      "task_id": 31,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 31,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 12,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 31,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 8,
+      "error": null
+    },
+    {
+      "task_id": 31,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 32,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 7,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 32,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 32,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 21,
+      "num_tool_calls": 13,
+      "error": null
+    },
+    {
+      "task_id": 32,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 33,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 15,
+      "num_tool_calls": 11,
+      "error": null
+    },
+    {
+      "task_id": 33,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 13,
+      "num_tool_calls": 9,
+      "error": null
+    },
+    {
+      "task_id": 33,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 21,
+      "num_tool_calls": 13,
+      "error": null
+    },
+    {
+      "task_id": 33,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 11,
+      "num_tool_calls": 8,
+      "error": null
+    },
+    {
+      "task_id": 34,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 14,
+      "num_tool_calls": 11,
+      "error": null
+    },
+    {
+      "task_id": 34,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 9,
+      "num_tool_calls": 7,
+      "error": null
+    },
+    {
+      "task_id": 34,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 12,
+      "num_tool_calls": 10,
+      "error": null
+    },
+    {
+      "task_id": 34,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 8,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 35,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 35,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 35,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 4,
+      "error": "ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 16384 tokens. However, you requested 16412 tokens (4124 in the messages, 12288 in the completion). Please reduce the length of the messages or completion. None"
+    },
+    {
+      "task_id": 35,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 36,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 7,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 36,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 15,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "task_id": 36,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 6,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 36,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 4,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 37,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 7,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 37,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 3,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 37,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 37,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 38,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 38,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 38,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 7,
+      "error": "ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 16384 tokens. However, you requested 16549 tokens (4261 in the messages, 12288 in the completion). Please reduce the length of the messages or completion. None"
+    },
+    {
+      "task_id": 38,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 39,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 39,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 39,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 39,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 40,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 40,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 9,
+      "num_tool_calls": 6,
+      "error": null
+    },
+    {
+      "task_id": 40,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 40,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 41,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 41,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 41,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 3,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 41,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 42,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 42,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 3,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 42,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 42,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 4,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 43,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 4,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 43,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 43,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 4,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 43,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 9,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 44,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 44,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 44,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 44,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 45,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 45,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 45,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 18,
+      "num_tool_calls": 8,
+      "error": null
+    },
+    {
+      "task_id": 45,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 46,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 46,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 22,
+      "num_tool_calls": 15,
+      "error": null
+    },
+    {
+      "task_id": 46,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 10,
+      "num_tool_calls": 8,
+      "error": null
+    },
+    {
+      "task_id": 46,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 24,
+      "num_tool_calls": 17,
+      "error": null
+    },
+    {
+      "task_id": 47,
+      "sample_id": 0,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 47,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 47,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 47,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 1,
+      "num_tool_calls": 1,
+      "error": null
+    },
+    {
+      "task_id": 48,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 48,
+      "sample_id": 1,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 11,
+      "num_tool_calls": 8,
+      "error": null
+    },
+    {
+      "task_id": 48,
+      "sample_id": 2,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 4,
+      "num_tool_calls": 3,
+      "error": null
+    },
+    {
+      "task_id": 48,
+      "sample_id": 3,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 6,
+      "num_tool_calls": 4,
+      "error": null
+    },
+    {
+      "task_id": 49,
+      "sample_id": 0,
+      "success": false,
+      "reward": 0.0,
+      "num_turns": 8,
+      "num_tool_calls": 5,
+      "error": null
+    },
+    {
+      "task_id": 49,
+      "sample_id": 1,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 49,
+      "sample_id": 2,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    },
+    {
+      "task_id": 49,
+      "sample_id": 3,
+      "success": true,
+      "reward": 1.0,
+      "num_turns": 2,
+      "num_tool_calls": 2,
+      "error": null
+    }
+  ],
+  "pass^4": 0.1,
+  "error_count": 16,
+  "total_tool_calls": 1134,
+  "avg_tool_calls_per_sample": 5.67,
+  "avg_tool_calls_per_task": 22.68,
+  "total_turns": 1709,
+  "avg_turns": 8.545,
+  "avg_turns_per_sample": 8.545,
+  "avg_turns_per_task": 34.18
+}
