@@ -11,17 +11,17 @@ env:
 
 policy:
   model_name: "experiments/grpo_2xa800/hf_step_300"
-  served_model_name: "delta-assistant-7b-grpo"
+  served_model_name: "toolagent-assistant-7b-grpo"
   base_url: "http://localhost:8000/v1"
   temperature: 0.7
   top_p: 0.9
   max_tokens: 1024
 output:
-  dir: "outputs/eval_delta_grpo_airline_2xa800_72b_user"
+  dir: "outputs/eval_toolagent_grpo_airline_2xa800_72b_user"
 
 wandb:
-  project: delta-critic-ledger-agentic-rl
-  run_name: eval_delta_grpo_airline_2xa800_72b_user
+  project: ToolAgent-GRPO
+  run_name: eval_toolagent_grpo_airline_2xa800_72b_user
   group: grpo-eval
   job_type: eval
 

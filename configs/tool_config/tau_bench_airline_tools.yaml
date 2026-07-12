@@ -1,5 +1,5 @@
 tools:
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_book_reservation_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_book_reservation_Tool
   config:
     type: native
   tool_schema:
@@ -107,7 +107,7 @@ tools:
         - total_baggages
         - nonfree_baggages
         - insurance
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_calculate_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_calculate_Tool
   config:
     type: native
   tool_schema:
@@ -125,7 +125,7 @@ tools:
               and spaces.
         required:
         - expression
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_cancel_reservation_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_cancel_reservation_Tool
   config:
     type: native
   tool_schema:
@@ -141,7 +141,7 @@ tools:
             description: The reservation ID, such as 'ZFA04Y'.
         required:
         - reservation_id
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_get_reservation_details_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_get_reservation_details_Tool
   config:
     type: native
   tool_schema:
@@ -157,7 +157,7 @@ tools:
             description: The reservation id, such as '8JX2WO'.
         required:
         - reservation_id
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_get_user_details_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_get_user_details_Tool
   config:
     type: native
   tool_schema:
@@ -173,7 +173,7 @@ tools:
             description: The user id, such as 'sara_doe_496'.
         required:
         - user_id
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_list_all_airports_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_list_all_airports_Tool
   config:
     type: native
   tool_schema:
@@ -185,7 +185,7 @@ tools:
         type: object
         properties: {}
         required: []
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_search_direct_flight_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_search_direct_flight_Tool
   config:
     type: native
   tool_schema:
@@ -210,7 +210,7 @@ tools:
         - origin
         - destination
         - date
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_search_onestop_flight_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_search_onestop_flight_Tool
   config:
     type: native
   tool_schema:
@@ -235,7 +235,7 @@ tools:
         - origin
         - destination
         - date
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_send_certificate_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_send_certificate_Tool
   config:
     type: native
   tool_schema:
@@ -255,7 +255,7 @@ tools:
         required:
         - user_id
         - amount
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_think_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_think_Tool
   config:
     type: native
   tool_schema:
@@ -273,7 +273,7 @@ tools:
             description: A thought to think about.
         required:
         - thought
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_transfer_to_human_agents_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_transfer_to_human_agents_Tool
   config:
     type: native
   tool_schema:
@@ -291,7 +291,7 @@ tools:
             description: A summary of the user's issue.
         required:
         - summary
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_update_reservation_baggages_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_update_reservation_baggages_Tool
   config:
     type: native
   tool_schema:
@@ -322,7 +322,7 @@ tools:
         - total_baggages
         - nonfree_baggages
         - payment_id
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_update_reservation_flights_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_update_reservation_flights_Tool
   config:
     type: native
   tool_schema:
@@ -369,7 +369,7 @@ tools:
         - cabin
         - flights
         - payment_id
-- class_name: delta_critic_ledger.verl_integration.tools.TauBench_update_reservation_passengers_Tool
+- class_name: toolagent.verl_integration.tools.TauBench_update_reservation_passengers_Tool
   config:
     type: native
   tool_schema:

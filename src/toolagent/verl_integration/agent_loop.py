@@ -3,7 +3,7 @@ from __future__ import annotations
 import copy
 from uuid import uuid4
 
-from delta_critic_ledger.training import b_ndsr, llm_judge
+from toolagent.training import b_ndsr, llm_judge
 
 from verl.experimental.agent_loop.agent_loop import AgentLoopOutput
 from verl.experimental.agent_loop.tool_agent_loop import AgentData, AgentState, ToolAgentLoop

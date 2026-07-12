@@ -3,7 +3,7 @@
 assistant:
   model_name: "Qwen/Qwen2.5-7B-Instruct"
   model_path: "../models/Qwen2.5-7B-Instruct"
-  served_name: "delta-assistant-7b"
+  served_name: "toolagent-assistant-7b"
   base_url: "http://localhost:8000/v1"
   port: 8000
   cuda_visible_devices: "0"

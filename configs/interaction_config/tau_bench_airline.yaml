@@ -1,6 +1,6 @@
 interaction:
   - name: "tau_bench_airline"
-    class_name: "delta_critic_ledger.verl_integration.interaction.DeltaTauBenchInteraction"
+    class_name: "toolagent.verl_integration.interaction.ToolAgentTauBenchInteraction"
     config:
       env_name: "airline"
       user_strategy: "llm"

@@ -9,7 +9,7 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Any, Optional
 
-from delta_critic_ledger.prompts import tau_system_prompt
+from toolagent.prompts import tau_system_prompt
 
 
 @dataclass

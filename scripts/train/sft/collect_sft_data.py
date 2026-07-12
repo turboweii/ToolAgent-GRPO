@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 from __future__ import annotations
 
 import argparse
@@ -11,10 +11,10 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from delta_critic_ledger.config import ensure_dir
-from delta_critic_ledger.evaluation import OpenAICompatPolicy
-from delta_critic_ledger.prompts import tau_system_prompt
-from delta_critic_ledger.tau_compat import create_tau_env
+from toolagent.config import ensure_dir
+from toolagent.evaluation import OpenAICompatPolicy
+from toolagent.prompts import tau_system_prompt
+from toolagent.tau_compat import create_tau_env
 
 def add_tau_bench_path(path: str | None) -> None:
     candidates = []

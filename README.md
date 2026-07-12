@@ -11,14 +11,21 @@ ToolAgent-GRPO is a long-horizon reinforcement learning training system for tool
 
 ## Main Result
 
-Repeat evaluation is performed on 50 tau-bench airline tasks with 4 samples per task. The numbers below match the project summary used in the resume.
+Evaluation is performed on 50 tau-bench airline tasks with 4 samples per task. The README reports the average over three comparable runs for each method.
 
-| Method | Overall pass@1 | Overall pass@4 | Avg. tool calls |
-|---|---:|---:|---:|
-| Ordinary GRPO | 19.5% | 30.0% | 8.75 |
-| Curriculum + Judge GRPO | **25.0%** | **42.0%** | **6.00** |
+Metric definitions:
 
-Compared with ordinary GRPO, the curriculum + judge variant improves overall pass@1 by **+5.5 points**, pass@4 by **+12.0 points**, and reduces average tool calls from **8.75** to **6.00**.
+- **pass@1**: success of `sample_id=0` for each task, averaged over tasks.
+- **pass@4**: a task is successful if any of its 4 samples succeeds.
+- **pass^4**: a task is successful only if all 4 samples succeed.
+- **Avg. tool calls** and **Avg. turns** are averaged per sample.
+
+| Method | Runs | Avg. pass@1 | Avg. pass@4 | Avg. pass^4 | Avg. tool calls | Avg. turns | Error rate |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Ordinary GRPO | 3 | 0.173 | 0.320 | 0.060 | 8.673 | 12.372 | 0.040 |
+| Curriculum + Judge GRPO | 3 | **0.280** | **0.413** | **0.113** | **5.780** | **8.372** | **0.033** |
+
+Compared with ordinary GRPO, the curriculum + judge variant improves average pass@1 by **+10.7 points**, pass@4 by **+9.3 points**, and pass^4 by **+5.3 points**, while reducing average tool calls from **8.673** to **5.780** per sample.
 
 ## Method
 
@@ -36,11 +43,11 @@ ToolAgent-GRPO addresses this with:
 
 The detailed report includes all experiment screenshots. A few representative figures are shown below.
 
-![ToolAgent result figure 1](docs/assets/result_01.png)
+<p><img src="./docs/assets/result_01.png" alt="ToolAgent result figure 1" width="900"></p>
 
-![ToolAgent result figure 2](docs/assets/result_02.png)
+<p><img src="./docs/assets/result_02.png" alt="ToolAgent result figure 2" width="900"></p>
 
-![ToolAgent result figure 3](docs/assets/result_03.png)
+<p><img src="./docs/assets/result_03.png" alt="ToolAgent result figure 3" width="900"></p>
 
 ## Report
 
@@ -62,7 +69,7 @@ scripts/
   eval/
   vllm_server/
 
-src/delta_critic_ledger/
+src/toolagent/
   sft_dataset.py
   training/b_ndsr.py
   training/jass.py

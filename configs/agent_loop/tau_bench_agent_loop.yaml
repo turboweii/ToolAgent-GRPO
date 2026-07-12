@@ -1,2 +1,2 @@
-﻿- name: tau_bench_tool_agent
-  _target_: delta_critic_ledger.verl_integration.agent_loop.TauBenchToolAgentLoop
+- name: tau_bench_tool_agent
+  _target_: toolagent.verl_integration.agent_loop.TauBenchToolAgentLoop

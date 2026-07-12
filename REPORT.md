@@ -93,84 +93,107 @@ This gives the policy more informative relative advantages without replacing the
 
 Evaluation uses 50 tau-bench airline tasks with 4 samples per task.
 
-Metrics are reported by split:
+The corrected metrics used in this report are:
 
-- `covered_seen`
-- `uncovered_seen`
-- `unseen`
-- `overall`
+- **pass@1**: only `sample_id=0` is counted for each task. A task contributes 1 if this first sample succeeds and 0 otherwise.
+- **pass@4**: a task contributes 1 if any of its 4 samples succeeds.
+- **pass^4**: a task contributes 1 only if all 4 samples succeed.
+- **Avg. tool calls**: total tool calls divided by the number of samples.
+- **Avg. turns**: total turns divided by the number of samples.
+- **Error rate**: number of samples with non-empty error divided by the number of samples.
 
-Each split reports:
-
-- number of tasks
-- pass@1
-- pass@4
-- average turns
-- average tool calls
-- error rate
+The report compares three curriculum runs against three ordinary GRPO runs.
 
 ## 7. Main Result
 
-| Method | Overall pass@1 | Overall pass@4 | Avg. tool calls |
-|---|---:|---:|---:|
-| Ordinary GRPO | 19.5% | 30.0% | 8.75 |
-| Curriculum + Judge GRPO | **25.0%** | **42.0%** | **6.00** |
+### 7.1 Three-Run Average
 
-The curriculum + judge method improves both success rate and tool-use efficiency:
+| Method | Runs | Avg. pass@1 | Avg. pass@4 | Avg. pass^4 | Avg. tool calls | Avg. turns | Error rate |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Ordinary GRPO | 3 | 0.173 | 0.320 | 0.060 | 8.673 | 12.372 | 0.040 |
+| Curriculum + Judge GRPO | 3 | **0.280** | **0.413** | **0.113** | **5.780** | **8.372** | **0.033** |
 
-- pass@1: 19.5% -> 25.0%
-- pass@4: 30.0% -> 42.0%
-- average tool calls: 8.75 -> 6.00
+The curriculum + judge method improves average task success and reduces rollout cost:
 
-This suggests that the trained policy not only solves more tasks, but also avoids some redundant tool calls.
+- pass@1: 0.173 -> 0.280 (+10.7 points)
+- pass@4: 0.320 -> 0.413 (+9.3 points)
+- pass^4: 0.060 -> 0.113 (+5.3 points)
+- average tool calls per sample: 8.673 -> 5.780
+- average turns per sample: 12.372 -> 8.372
+
+### 7.2 Six Individual Runs
+
+| Group | Run | pass@1 | pass@4 | pass^4 | Avg. tool calls | Avg. turns | Error rate |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Curriculum | previous | 0.260 | 0.380 | 0.100 | 5.670 | 8.545 | 0.080 |
+| Curriculum | repeat | 0.260 | 0.420 | 0.100 | 6.000 | 8.560 | 0.010 |
+| Curriculum | unified | **0.320** | **0.440** | **0.140** | 5.670 | 8.010 | 0.010 |
+| Ordinary GRPO | original | 0.200 | 0.300 | 0.060 | 9.070 | 13.035 | 0.060 |
+| Ordinary GRPO | previous/current | 0.120 | 0.360 | 0.040 | 8.205 | 11.730 | 0.040 |
+| Ordinary GRPO | repeat | 0.200 | 0.300 | 0.080 | 8.745 | 12.350 | 0.020 |
+
+The six JSON files used for this comparison are stored under:
+
+```text
+outputs/curriculum/
+  20260703_0438_curriculum_previous_eval_report.json
+  20260703_115619_curriculum_repeat_eval_report.json
+  20260703_131536_curriculum_unified_eval_report.json
+
+outputs/grpo/
+  20260701_grpo_original_eval_report.json
+  20260703_115619_grpo_previous_current_eval_report.json
+  20260703_repeat_grpo_eval_report.json
+```
 
 ## 8. Figures
+
 
 The following figures are included from the local experiment artifacts. They are kept in `docs/assets/` so that the report can display the original evaluation screenshots and tables.
 
 ### Figure 1
 
-![Result figure 1](docs/assets/result_01.png)
+<p><img src="./docs/assets/result_01.png" alt="Result figure 1" width="900"></p>
 
 ### Figure 2
 
-![Result figure 2](docs/assets/result_02.png)
+<p><img src="./docs/assets/result_02.png" alt="Result figure 2" width="900"></p>
 
 ### Figure 3
 
-![Result figure 3](docs/assets/result_03.png)
+<p><img src="./docs/assets/result_03.png" alt="Result figure 3" width="900"></p>
 
 ### Figure 4
 
-![Result figure 4](docs/assets/result_04.png)
+<p><img src="./docs/assets/result_04.png" alt="Result figure 4" width="900"></p>
 
 ### Figure 5
 
-![Result figure 5](docs/assets/result_05.png)
+<p><img src="./docs/assets/result_05.png" alt="Result figure 5" width="900"></p>
 
 ### Figure 6
 
-![Result figure 6](docs/assets/result_06.png)
+<p><img src="./docs/assets/result_06.png" alt="Result figure 6" width="900"></p>
 
 ### Figure 7
 
-![Result figure 7](docs/assets/result_07.png)
+<p><img src="./docs/assets/result_07.png" alt="Result figure 7" width="900"></p>
 
 ### Figure 8
 
-![Result figure 8](docs/assets/result_08.png)
+<p><img src="./docs/assets/result_08.png" alt="Result figure 8" width="900"></p>
 
 ### Figure 9
 
-![Result figure 9](docs/assets/result_09.png)
+<p><img src="./docs/assets/result_09.png" alt="Result figure 9" width="900"></p>
 
 ### Figure 10
 
-![Result figure 10](docs/assets/result_10.png)
+<p><img src="./docs/assets/result_10.png" alt="Result figure 10" width="900"></p>
 
 ### Figure 11
 
-![Result figure 11](docs/assets/result_11.png)
+<p><img src="./docs/assets/result_11.png" alt="Result figure 11" width="900"></p>
 
 ## 9. Analysis
 
@@ -184,18 +207,18 @@ Terminal reward only tells whether the final task succeeded. It does not tell wh
 
 ### 9.3 Tool Efficiency
 
-The curriculum + judge model reduces average tool calls from 8.75 to 6.00. This indicates more direct planning and less redundant tool querying.
+Across the three-run comparison, the curriculum + judge group reduces average tool calls from 8.673 to 5.780 per sample and average turns from 12.372 to 8.372 per sample. This suggests that the policy learns a more direct tool-use strategy rather than relying on repeated or redundant tool queries.
 
 ## 10. Implementation Map
 
 Important implementation files:
 
-- `src/delta_critic_ledger/sft_dataset.py`: assistant-only SFT labeling.
-- `src/delta_critic_ledger/verl_integration/agent_loop.py`: rollout loop for agent interaction.
-- `src/delta_critic_ledger/verl_integration/interaction.py`: user, environment, and tool interaction.
-- `src/delta_critic_ledger/training/b_ndsr.py`: B-NDSR related reward and advantage processing.
-- `src/delta_critic_ledger/training/jass.py`: JASS sampling and scoring logic.
-- `src/delta_critic_ledger/training/llm_judge.py`: LLM-as-Judge process reward for failed trajectories.
+- `src/toolagent/sft_dataset.py`: assistant-only SFT labeling.
+- `src/toolagent/verl_integration/agent_loop.py`: rollout loop for agent interaction.
+- `src/toolagent/verl_integration/interaction.py`: user, environment, and tool interaction.
+- `src/toolagent/training/b_ndsr.py`: B-NDSR related reward and advantage processing.
+- `src/toolagent/training/jass.py`: JASS sampling and scoring logic.
+- `src/toolagent/training/llm_judge.py`: LLM-as-Judge process reward for failed trajectories.
 
 ## 11. Limitations and Future Work
 
@@ -211,4 +234,4 @@ The current experiments focus on tau-bench airline. Future work can extend the f
 
 ToolAgent-GRPO combines teacher rollout, LoRA SFT, veRL GRPO, tau-bench async rollout, curriculum sampling, outcome-anchored judge reward, and long-context memory optimization.
 
-In repeat evaluation, the curriculum + judge variant improves overall pass@1 from 19.5% to 25.0%, improves pass@4 from 30.0% to 42.0%, and reduces average tool calls from 8.75 to 6.00.
+Across three comparable runs, the curriculum + judge variant improves average pass@1 from 0.173 to 0.280, pass@4 from 0.320 to 0.413, and pass^4 from 0.060 to 0.113, while reducing average tool calls from 8.673 to 5.780 per sample.

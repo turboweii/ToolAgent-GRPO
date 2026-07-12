@@ -2,7 +2,7 @@
 set -euo pipefail
 
 MODEL_PATH=${MODEL_PATH:-"../models/Qwen2.5-7B-Instruct"}
-SERVED_MODEL_NAME=${SERVED_MODEL_NAME:-"delta-assistant-7b"}
+SERVED_MODEL_NAME=${SERVED_MODEL_NAME:-"toolagent-assistant-7b"}
 PORT=${PORT:-8000}
 CUDA_DEVICES=${CUDA_DEVICES:-0}
 TP_SIZE=${TP_SIZE:-1}

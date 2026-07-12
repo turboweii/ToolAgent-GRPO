@@ -6,8 +6,8 @@ import uuid
 from pathlib import Path
 from typing import Any, Optional
 
-from delta_critic_ledger.verl_integration.context import CURRENT_TAU_ENV, CURRENT_TAU_STATE, make_initial_state
-from delta_critic_ledger.verl_integration.reward_state import (
+from toolagent.verl_integration.context import CURRENT_TAU_ENV, CURRENT_TAU_STATE, make_initial_state
+from toolagent.verl_integration.reward_state import (
     compute_tau_bench_components,
     ensure_tau_bench_state,
     init_tau_bench_state,
@@ -15,8 +15,8 @@ from delta_critic_ledger.verl_integration.reward_state import (
     record_final_response,
     record_user_turn,
 )
-from delta_critic_ledger.tau_compat import create_tau_env
-from delta_critic_ledger.training import b_ndsr
+from toolagent.tau_compat import create_tau_env
+from toolagent.training import b_ndsr
 
 try:
     from verl.interactions.base import BaseInteraction
@@ -291,7 +291,7 @@ class TauBenchInteraction(BaseInteraction):
 
 
 # Backward-compatible class name for existing veRL configs.
-DeltaTauBenchInteraction = TauBenchInteraction
+ToolAgentTauBenchInteraction = TauBenchInteraction
 
 
 

@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from delta_critic_ledger.config import ensure_dir, load_config
-from delta_critic_ledger.sft_dataset import AssistantOnlyCollator, TrajectorySFTDataset
+from toolagent.config import ensure_dir, load_config
+from toolagent.sft_dataset import AssistantOnlyCollator, TrajectorySFTDataset
 
 
 def main() -> None:
@@ -24,7 +24,7 @@ def main() -> None:
     if args.model_path:
         cfg["model"]["name_or_path"] = args.model_path
 
-    os.environ.setdefault("WANDB_PROJECT", cfg["output"].get("wandb_project", "delta-critic-ledger-agentic-rl"))
+    os.environ.setdefault("WANDB_PROJECT", cfg["output"].get("wandb_project", "ToolAgent-GRPO"))
     os.environ.setdefault("WANDB_RUN_GROUP", cfg["output"].get("wandb_group", "sft"))
     os.environ.setdefault("WANDB_JOB_TYPE", cfg["output"].get("wandb_job_type", "sft-train"))
 

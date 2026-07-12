@@ -21,9 +21,9 @@ def make_initial_state(task_id: int, instance_id: str | None = None, env_id: int
         "num_user_turns": 0,
         "done": False,
         "action_history": [],
-        "delta_steps": [],
+        "toolagent_steps": [],
         "ledger_steps": [],
-        "delta_reward_sum": 0.0,
+        "toolagent_reward_sum": 0.0,
         "evidence_bonus_sum": 0.0,
         "evidence_rewarded_goal_fields": [],
     }

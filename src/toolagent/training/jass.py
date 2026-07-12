@@ -14,7 +14,7 @@ import urllib.request
 from dataclasses import dataclass
 from typing import Any
 
-from delta_critic_ledger.training import b_ndsr
+from toolagent.training import b_ndsr
 
 
 SAMPLING_MODES = {"normal", "explore", "conservative"}

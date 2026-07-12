@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
-from delta_critic_ledger.config import ensure_dir, load_config
-from delta_critic_ledger.evaluation import OpenAICompatPolicy, run_single_task, write_eval_report
+from toolagent.config import ensure_dir, load_config
+from toolagent.evaluation import OpenAICompatPolicy, run_single_task, write_eval_report
 
 
 def add_tau_bench_path() -> None:
@@ -27,7 +27,7 @@ def add_tau_bench_path() -> None:
 
 def log_eval_to_wandb(report: dict, cfg: dict, config_path: str) -> None:
     wandb_cfg = cfg.get("wandb", {})
-    project = wandb_cfg.get("project", "delta-critic-ledger-agentic-rl")
+    project = wandb_cfg.get("project", "ToolAgent-GRPO")
     run_name = wandb_cfg.get("run_name") or Path(cfg["output"]["dir"]).name
     group = wandb_cfg.get("group", "eval")
     job_type = wandb_cfg.get("job_type", "eval")
@@ -98,7 +98,7 @@ def main() -> None:
     num_samples = int(env_cfg.get("num_samples_per_task", 4))
     for task_id in range(num_tasks):
         for sample_id in range(num_samples):
-            from delta_critic_ledger.tau_compat import create_tau_env
+            from toolagent.tau_compat import create_tau_env
 
             env = create_tau_env(
                 get_env,
