@@ -149,11 +149,23 @@ def apply_judge_reward(reward_tensor, batch) -> tuple[object, dict[str, float]]:
     if messages is None:
         return reward_tensor, {"judge/enabled": 1.0, "judge/missing_messages": 1.0}
     rewards = reward_tensor.clone()
+    # Judge is only meaningful as a relative ranking signal inside a task
+    # group that already contains a ground-truth successful trajectory.  Do
+    # not densify an all-failure task group: there is no success anchor for
+    # calibrating its failed rollouts.
+    task_keys = [str(task_ids[idx]) if idx < len(task_ids) else str(idx) for idx in range(len(messages))]
+    success_by_task: dict[str, bool] = {}
+    for idx, task_key in enumerate(task_keys):
+        success_by_task[task_key] = success_by_task.get(task_key, False) or float(rewards[idx].sum().item()) >= 1.0
     judged = 0
+    skipped_without_success = 0
     for idx, raw in enumerate(messages):
         if not isinstance(raw, list):
             continue
         old = float(rewards[idx].sum().item())
+        if old < 1.0 and not success_by_task.get(task_keys[idx], False):
+            skipped_without_success += 1
+            continue
         dense = densify_trajectory(old, raw, str(task_ids[idx]), config)
         if old < 1.0:
             response_mask = batch.batch["response_mask"][idx]
@@ -165,6 +177,7 @@ def apply_judge_reward(reward_tensor, batch) -> tuple[object, dict[str, float]]:
     return rewards, {
         "judge/enabled": 1.0,
         "judge/judged_failures": float(judged),
+        "judge/skipped_without_success_anchor": float(skipped_without_success),
         "judge/mean_reward": float(rewards.sum(-1).mean().item()),
     }
 
