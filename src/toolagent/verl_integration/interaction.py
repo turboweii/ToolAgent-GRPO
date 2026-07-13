@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import uuid
@@ -132,7 +133,10 @@ class TauBenchInteraction(BaseInteraction):
             task_split=self.task_split,
             task_index=int(task_id),
         )
-        reset_result = env.reset(task_index=int(task_id))
+        # tau-bench exposes a synchronous environment API. Run the reset in
+        # the default executor so one rollout does not block veRL's async
+        # AgentLoop event loop while other rollouts are making progress.
+        reset_result = await asyncio.to_thread(env.reset, task_index=int(task_id))
         initial_user_response = str(getattr(reset_result, "observation", reset_result))
         state = make_initial_state(int(task_id), instance_id=instance_id, env_id=id(env))
         state["state_id"] = id(state)
@@ -140,7 +144,7 @@ class TauBenchInteraction(BaseInteraction):
         state["initial_user_response"] = initial_user_response
         replay_actions = kwargs.get("b_ndsr_replay_actions") or []
         if replay_actions:
-            _replay_b_ndsr_actions(env, state, replay_actions)
+            await asyncio.to_thread(_replay_b_ndsr_actions, env, state, replay_actions)
         CURRENT_TAU_ENV.set(env)
         CURRENT_TAU_STATE.set(state)
         self._instance_dict[instance_id] = {
@@ -193,7 +197,11 @@ class TauBenchInteraction(BaseInteraction):
 
         record_final_response(state, assistant_content)
         try:
-            step_res = env.step(Action(name=RESPOND_ACTION_NAME, kwargs={"content": assistant_content}))
+            # Keep the synchronous tau-bench step off the event-loop thread.
+            step_res = await asyncio.to_thread(
+                env.step,
+                Action(name=RESPOND_ACTION_NAME, kwargs={"content": assistant_content}),
+            )
         except Exception as exc:
             state["done"] = True
             components = compute_tau_bench_components(state)
@@ -292,6 +300,5 @@ class TauBenchInteraction(BaseInteraction):
 
 # Backward-compatible class name for existing veRL configs.
 ToolAgentTauBenchInteraction = TauBenchInteraction
-
 
 
