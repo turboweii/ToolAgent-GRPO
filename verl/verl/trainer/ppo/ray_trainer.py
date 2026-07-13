@@ -647,13 +647,13 @@ class RayPPOTrainer:
         return batch.slice(keep)
 
     def _generate_b_ndsr_batch(self, batch: DataProto, gen_batch: DataProto):
-        """Generate 4 first, then add 2 for failed tasks up to a maximum of 12."""
+        """Generate 4 first, then add 2 for failed tasks up to a maximum of 8."""
         prompt_count = len(gen_batch)
         uid_values = np.asarray(batch.non_tensor_batch["uid"], dtype=object)
         collected: list[DataProto] = []
         active = list(range(prompt_count))
 
-        for round_size, increment in ((4, 4), (6, 2), (8, 2), (10, 2), (12, 2)):
+        for round_size, increment in ((4, 4), (6, 2), (8, 2)):
             if not active:
                 break
             repeat = increment if round_size > 4 else 4
@@ -675,9 +675,9 @@ class RayPPOTrainer:
                 uid = uid_values[prompt_index]
                 group_indices = [i for i, value in enumerate(candidate_uids) if value == uid]
                 scores = raw_scores[group_indices].sum(-1).detach().cpu().tolist()
-                if len(scores) < round_size and round_size < 12:
+                if len(scores) < round_size and round_size < 8:
                     next_active.append(prompt_index)
-                elif scores and all(float(score) < 0.5 for score in scores) and round_size < 12:
+                elif scores and all(float(score) < 0.5 for score in scores) and round_size < 8:
                     next_active.append(prompt_index)
             active = next_active
 

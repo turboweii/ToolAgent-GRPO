@@ -66,7 +66,7 @@ export GRPO_SEEN_CURRICULUM=${GRPO_SEEN_CURRICULUM:-40:0.85,100:0.60,300:0.40}
 export GRPO_SEEN_CURRICULUM_SEED=${GRPO_SEEN_CURRICULUM_SEED:-20260701}
 export LLM_JUDGE_ALPHA=${LLM_JUDGE_ALPHA:-0.2}
 export B_NDSR_ROOT_MIN_SAMPLES=${B_NDSR_ROOT_MIN_SAMPLES:-4}
-export B_NDSR_ROOT_MAX_SAMPLES=${B_NDSR_ROOT_MAX_SAMPLES:-12}
+export B_NDSR_ROOT_MAX_SAMPLES=${B_NDSR_ROOT_MAX_SAMPLES:-8}
 export B_NDSR_ROOT_INCREMENT=${B_NDSR_ROOT_INCREMENT:-2}
 export B_NDSR_TOTAL_BUDGET_PER_TASK=${B_NDSR_TOTAL_BUDGET_PER_TASK:-12}
 export B_NDSR_SUFFIX_MIN_SAMPLES=${B_NDSR_SUFFIX_MIN_SAMPLES:-4}
@@ -81,7 +81,7 @@ else
 fi
 
 if [[ "${B_NDSR_ENABLED,,}" == "true" || "${B_NDSR_ENABLED}" == "1" ]]; then
-  # Generate candidates progressively: 4/6/8/10/12; easy tasks stop at 4.
+  # Generate candidates progressively: 4/6/8; easy tasks stop at 4.
   # samples per uid after outcome/JASS selection.
   EXTRA_ARGS+=(actor_rollout_ref.rollout.n=8)
   EXTRA_ARGS+=(actor_rollout_ref.actor.ppo_mini_batch_size=2)

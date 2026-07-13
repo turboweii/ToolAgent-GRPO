@@ -93,9 +93,8 @@ class BNDSPPlan:
 
 def plan_b_ndsr(scores: list[float]) -> BNDSPPlan:
     minimum = integer("B_NDSR_ROOT_MIN_SAMPLES", 4)
-    # The original B-NDSR run used 4 initial root rollouts and allowed the
-    # budget to grow through 6, 8, 10, up to 12 selected rollouts.
-    maximum = integer("B_NDSR_ROOT_MAX_SAMPLES", 12)
+    # Use 4 initial root rollouts and grow through 6 up to 8 selected rollouts.
+    maximum = integer("B_NDSR_ROOT_MAX_SAMPLES", 8)
     increment = integer("B_NDSR_ROOT_INCREMENT", 2)
     top_ps = tuple(float(x) for x in os.getenv(
         "B_NDSR_ROOT_TOP_PS",
