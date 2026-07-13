@@ -47,10 +47,13 @@ def log_eval_to_wandb(report: dict, cfg: dict, config_path: str) -> None:
     metrics = {
         "eval/success_rate": report.get("success_rate"),
         "eval/pass_at_1": report.get("pass_at_1"),
+        "eval/pass_at_4": report.get("pass_at_4"),
+        "eval/pass_power_4": report.get("pass^4", report.get("pass_power_4")),
         "eval/error_rate": report.get("error_rate"),
         "eval/num_samples": report.get("num_samples"),
         "eval/num_tasks": report.get("num_tasks"),
         "eval/avg_tool_calls": report.get("avg_tool_calls"),
+        "eval/avg_turns": report.get("avg_turns"),
     }
     for split_name, split in (report.get("by_split") or {}).items():
         for key, value in split.items():

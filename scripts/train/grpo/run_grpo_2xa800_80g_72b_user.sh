@@ -24,11 +24,14 @@ fi
 
 export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
 TAU_BENCH_PATH=${TAU_BENCH_PATH:-$(pwd)/../tau-bench}
+export TOOLAGENT_ROOT=${TOOLAGENT_ROOT:-$(pwd)}
 if [[ -z "${VERL_PATH:-}" ]]; then
-  if [[ -d "$(pwd)/verl/verl" ]]; then
-    VERL_PATH="$(pwd)/verl"
+  if [[ -d "/home/turbo/llm/ToolAgent-GRPO-Workspace/verl/verl" ]]; then
+    VERL_PATH="/home/turbo/llm/ToolAgent-GRPO-Workspace/verl"
   elif [[ -d "$(pwd)/../verl/verl" ]]; then
     VERL_PATH="$(pwd)/../verl"
+  elif [[ -d "$(pwd)/verl/verl" ]]; then
+    VERL_PATH="$(pwd)/verl"
   elif [[ -d "/home/turbo/llm/agentic-grpo/verl/verl" ]]; then
     VERL_PATH="/home/turbo/llm/agentic-grpo/verl"
   else
@@ -57,13 +60,13 @@ export LLM_JUDGE_MODEL=${LLM_JUDGE_MODEL:-Qwen/Qwen2.5-72B-Instruct-AWQ}
 export LLM_JUDGE_BASE_URL=${LLM_JUDGE_BASE_URL:-http://localhost:8001/v1}
 
 # Seen-task curriculum: sample only seen tasks, with a scheduled covered/uncovered mix.
-export GRPO_SEEN_CURRICULUM_ENABLED=${GRPO_SEEN_CURRICULUM_ENABLED:-true}
+export GRPO_SEEN_CURRICULUM_ENABLED=${GRPO_SEEN_CURRICULUM_ENABLED:-false}
 export GRPO_SEEN_CURRICULUM_SPLIT_JSON=${GRPO_SEEN_CURRICULUM_SPLIT_JSON:-experiments/sft_collect_airline/split.json}
-export GRPO_SEEN_CURRICULUM=${GRPO_SEEN_CURRICULUM:-40:0.85,100:0.60,180:0.40,300:0.25}
+export GRPO_SEEN_CURRICULUM=${GRPO_SEEN_CURRICULUM:-40:0.85,100:0.60,300:0.40}
 export GRPO_SEEN_CURRICULUM_SEED=${GRPO_SEEN_CURRICULUM_SEED:-20260701}
 export LLM_JUDGE_ALPHA=${LLM_JUDGE_ALPHA:-0.2}
 export B_NDSR_ROOT_MIN_SAMPLES=${B_NDSR_ROOT_MIN_SAMPLES:-4}
-export B_NDSR_ROOT_MAX_SAMPLES=${B_NDSR_ROOT_MAX_SAMPLES:-8}
+export B_NDSR_ROOT_MAX_SAMPLES=${B_NDSR_ROOT_MAX_SAMPLES:-12}
 export B_NDSR_ROOT_INCREMENT=${B_NDSR_ROOT_INCREMENT:-2}
 export B_NDSR_TOTAL_BUDGET_PER_TASK=${B_NDSR_TOTAL_BUDGET_PER_TASK:-12}
 export B_NDSR_SUFFIX_MIN_SAMPLES=${B_NDSR_SUFFIX_MIN_SAMPLES:-4}
@@ -78,7 +81,9 @@ else
 fi
 
 if [[ "${B_NDSR_ENABLED,,}" == "true" || "${B_NDSR_ENABLED}" == "1" ]]; then
-  EXTRA_ARGS+=(actor_rollout_ref.rollout.n=1)
+  # Generate candidates progressively: 4/6/8/10/12; easy tasks stop at 4.
+  # samples per uid after outcome/JASS selection.
+  EXTRA_ARGS+=(actor_rollout_ref.rollout.n=8)
   EXTRA_ARGS+=(actor_rollout_ref.actor.ppo_mini_batch_size=2)
   EXTRA_ARGS+=(actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=1)
   EXTRA_ARGS+=(actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=1)

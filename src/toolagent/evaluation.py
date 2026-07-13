@@ -209,53 +209,81 @@ def write_eval_report(results: list[EvalResult], output_dir: str | Path, config:
 
     per_task = []
     for task_id, items in sorted(by_task.items()):
+        items = sorted(items, key=lambda item: item.sample_id)
         successes = sum(1 for item in items if item.success)
+        first_sample = next((item for item in items if item.sample_id == 0), None)
+        has_four_samples = len(items) == 4 and {item.sample_id for item in items} == {0, 1, 2, 3}
         per_task.append({
             "task_id": task_id,
             "split": task_splits.get(task_id, "unspecified"),
             "num_samples": len(items),
             "success_count": successes,
-            "pass_at_1": successes / len(items) if items else 0.0,
-            f"pass_at_{len(items)}": 1.0 if successes > 0 else 0.0,
+            "pass_at_1": 1.0 if first_sample is not None and first_sample.success else 0.0,
+            "pass_at_4": 1.0 if any(item.success for item in items[:4]) else 0.0,
+            "pass_power_4": 1.0 if has_four_samples and all(item.success for item in items) else 0.0,
+            "pass^4": 1.0 if has_four_samples and all(item.success for item in items) else 0.0,
             "avg_tool_calls": sum(item.num_tool_calls for item in items) / len(items) if items else 0.0,
+            "avg_turns": sum(item.num_turns for item in items) / len(items) if items else 0.0,
             "error_count": sum(1 for item in items if item.error),
         })
-    pass_at_1 = success_rate
-    max_samples = max((len(items) for items in by_task.values()), default=0)
-    pass_at_k = (
-        sum(1 for items in by_task.values() if any(item.success for item in items)) / len(by_task)
-        if by_task else 0.0
-    )
+
+    def task_metrics(task_items: list[EvalResult]) -> tuple[float, float, float]:
+        ordered = sorted(task_items, key=lambda item: item.sample_id)
+        first_sample = next((item for item in ordered if item.sample_id == 0), None)
+        has_four_samples = len(ordered) == 4 and {item.sample_id for item in ordered} == {0, 1, 2, 3}
+        pass_at_1 = 1.0 if first_sample is not None and first_sample.success else 0.0
+        pass_at_4 = 1.0 if any(item.success for item in ordered[:4]) else 0.0
+        pass_power_4 = 1.0 if has_four_samples and all(item.success for item in ordered) else 0.0
+        return pass_at_1, pass_at_4, pass_power_4
+
+    task_metric_values = [task_metrics(items) for items in by_task.values()]
+    pass_at_1 = sum(value[0] for value in task_metric_values) / len(task_metric_values) if task_metric_values else 0.0
+    pass_at_4 = sum(value[1] for value in task_metric_values) / len(task_metric_values) if task_metric_values else 0.0
+    pass_power_4 = sum(value[2] for value in task_metric_values) / len(task_metric_values) if task_metric_values else 0.0
     split_metrics = {}
     for split_name in sorted(set(task_splits.values())):
         split_results = [result for result in results if task_splits.get(result.task_id) == split_name]
-        split_tasks = {result.task_id for result in split_results}
+        split_by_task: dict[int, list[EvalResult]] = defaultdict(list)
+        for result in split_results:
+            split_by_task[result.task_id].append(result)
+        split_values = [task_metrics(items) for items in split_by_task.values()]
         split_metrics[split_name] = {
-            "num_tasks": len(split_tasks),
+            "num_tasks": len(split_by_task),
             "num_samples": len(split_results),
             "success_rate": (
                 sum(1 for result in split_results if result.success) / len(split_results) if split_results else 0.0
             ),
-            f"pass_at_{max_samples}": (
-                sum(
-                    1
-                    for task_id in split_tasks
-                    if any(result.success for result in split_results if result.task_id == task_id)
-                )
-                / len(split_tasks)
-                if split_tasks
-                else 0.0
-            ),
+            "pass_at_1": sum(value[0] for value in split_values) / len(split_values) if split_values else 0.0,
+            "pass_at_4": sum(value[1] for value in split_values) / len(split_values) if split_values else 0.0,
+            "pass_power_4": sum(value[2] for value in split_values) / len(split_values) if split_values else 0.0,
+            "pass^4": sum(value[2] for value in split_values) / len(split_values) if split_values else 0.0,
+            "avg_tool_calls": sum(result.num_tool_calls for result in split_results) / len(split_results) if split_results else 0.0,
+            "avg_turns": sum(result.num_turns for result in split_results) / len(split_results) if split_results else 0.0,
+            "error_rate": sum(1 for result in split_results if result.error) / len(split_results) if split_results else 0.0,
         }
     report = {
         "success_rate": success_rate,
         "pass_at_1": pass_at_1,
-        f"pass_at_{max_samples}": pass_at_k,
+        "pass_at_4": pass_at_4,
+        "pass_power_4": pass_power_4,
+        "pass^4": pass_power_4,
         "error_rate": error_rate,
         "num_samples": len(results),
         "num_tasks": len(by_task),
         "avg_tool_calls": sum(r.num_tool_calls for r in results) / len(results) if results else 0.0,
-        "by_split": {**split_metrics, "overall": {"num_tasks": len(by_task), "num_samples": len(results), "success_rate": success_rate, f"pass_at_{max_samples}": pass_at_k}},
+        "avg_turns": sum(r.num_turns for r in results) / len(results) if results else 0.0,
+        "by_split": {**split_metrics, "overall": {
+            "num_tasks": len(by_task),
+            "num_samples": len(results),
+            "success_rate": success_rate,
+            "pass_at_1": pass_at_1,
+            "pass_at_4": pass_at_4,
+            "pass_power_4": pass_power_4,
+            "pass^4": pass_power_4,
+            "avg_tool_calls": sum(r.num_tool_calls for r in results) / len(results) if results else 0.0,
+            "avg_turns": sum(r.num_turns for r in results) / len(results) if results else 0.0,
+            "error_rate": error_rate,
+        }},
         "per_task": per_task,
         "config": config,
         "results": [asdict(r) for r in results],

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -82,7 +83,10 @@ def main() -> None:
 
     if args.train_task_ids_from:
         metadata = json.loads(Path(args.train_task_ids_from).read_text(encoding="utf-8"))
-        train_ids = [int(value) for value in (metadata.get("covered_seen_task_ids") or metadata.get("seen_task_ids", []))]
+        if os.getenv("GRPO_SEEN_CURRICULUM_ENABLED", "false").lower() in {"1", "true", "yes", "on"}:
+            train_ids = [int(value) for value in metadata.get("seen_task_ids", [])]
+        else:
+            train_ids = [int(value) for value in (metadata.get("covered_seen_task_ids") or metadata.get("seen_task_ids", []))]
         if not train_ids:
             raise ValueError(f"No seen_task_ids found in {args.train_task_ids_from}")
     else:
@@ -118,5 +122,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
